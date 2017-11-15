@@ -1,7 +1,7 @@
 {
     "name": "toc-anchor",
-    "version": "0.0.1",
-    "description": "",
+    "version": "1.0.0",
+    "description": "Automatically adds anchors to elements",
     "main": "dist/toc-anchor.js",
     "module": "index.js",
     "scripts": {
@@ -29,7 +29,7 @@
     "devDependencies": {
         "domassist": "^1.9.1",
         "eslint": "^3.9.1",
-        "eslint-config-firstandthird": "^3.2.0",
+        "eslint-config-firstandthird": "3.2.0",
         "eslint-plugin-compat": "^2.1.0",
         "eslint-plugin-import": "^2.1.0",
         "phantomjs-prebuilt": "2.1.15",
@@ -57,14 +57,13 @@
         },
         "extends": "firstandthird",
         "plugins": [
-            "compat",
-            "import"
+            "compat"
         ],
         "rules": {
             "compat/compat": 2,
             "space-before-blocks": [
-              "error",
-              "always"
+                "error",
+                "never"
             ]
         }
     },

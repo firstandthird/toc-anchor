@@ -11,11 +11,9 @@ import { find, addAttrs, addClass } from 'domassist';
  * @returns
  */
 function tocAnchor(selector, anchorContent = null){
-
   const headings = find(selector);
 
   headings.forEach((heading) =>{
-
     const link = document.createElement('a');
     const anchor = heading.getAttribute('data-anchor-id') || heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
 

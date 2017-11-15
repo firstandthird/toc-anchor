@@ -5,7 +5,7 @@ const init = () =>{
 };
 
 export function teardown(el){
-  while (el.firstChild) {
+  while (el.firstChild){
     el.removeChild(el.firstChild);
   }
 }
