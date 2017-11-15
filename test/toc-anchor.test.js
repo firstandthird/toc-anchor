@@ -3,9 +3,9 @@ import domassist from 'domassist';
 import TocAnchor from '../index';
 import { teardown } from './setup';
 
-const setup = (total) =>{
+const setup = (total) => {
   const frag = document.createDocumentFragment();
-  for (let i = 0; i < total; i += 1){
+  for (let i = 0; i < total; i += 1) {
     const heading = document.createElement('h2');
     heading.textContent = `Heading ${1}`;
     frag.appendChild(heading);
