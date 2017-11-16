@@ -24,7 +24,7 @@ test('tocAnchor - Returs an array of headings', assert => {
   assert.end();
 });
 
-test('tocAnchor - Generates anchors', assert => {
+test('tocAnchor - Generates anchors from string selector', assert => {
   const headersToCreate = 5;
   const el = document.getElementById('toc-container').appendChild(setup(headersToCreate));
 
@@ -37,3 +37,23 @@ test('tocAnchor - Generates anchors', assert => {
   teardown(el);
   assert.end();
 });
+
+test('tocAnchor - Generates anchors from Element', assert => {
+  const headersToCreate = 3;
+  const el = document.getElementById('toc-container');
+  el.appendChild(setup(headersToCreate));
+
+  const headings = domassist.find('#toc-container h2');
+
+  TocAnchor(headings);
+
+  console.log(headings);
+
+  const numberOfAnchors = domassist.find('.toc-anchor-link').length;
+
+  assert.assert(numberOfAnchors, headersToCreate, 'Returned the generated anchors');
+
+  teardown(el);
+  assert.end();
+});
+
