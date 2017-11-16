@@ -1,21 +1,24 @@
 # TOC-Anchor
 Automatically adds anchors to elements.
 ## Usage
-Add the script to your project:
+In your project import the library:
 
-```html
-<script src="toc-anchor.js"></script>
-<script>
-  TocAnchor('body h2');
-</script>
+```js
+import TocAnchor from ‘toc-anchor’;
 ```
 ### TocAnchor(selector, [anchorContent])
 
 Initializes anchor library. Both the first and second argument can either be a selector, DOM node, or a collection of DOM Nodes.
 
-`selector` - _Selector to which anchors will be added_
+#### Parameters
 
-`anchorContent` - _Content to be included as anchor, if no provided a clip icon will be added by default_
+`selector` _{string|Element|NodeList}_ - Selector to which anchors will be added
+
+`[anchorContent]` _{string|Element|NodeList}_ - Content to be included as anchor, if no provided a clip icon will be added by default
+
+#### Returns
+
+`Array` - Array containing the elements to which anchors where added
 
 ## Example
 ```js

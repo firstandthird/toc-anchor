@@ -1,3 +1,5 @@
+/*eslint new-cap: ["error", {capIsNewExceptions: ["TocAnchor"]}]*/
+
 import test from 'tape-rollup';
 import domassist from 'domassist';
 import TocAnchor from '../index';
@@ -46,8 +48,6 @@ test('tocAnchor - Generates anchors from Element', assert => {
   const headings = domassist.find('#toc-container h2');
 
   TocAnchor(headings);
-
-  console.log(headings);
 
   const numberOfAnchors = domassist.find('.toc-anchor-link').length;
 

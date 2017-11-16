@@ -1,4 +1,3 @@
-'use strict';
 
 import { find, addAttrs, addClass } from 'domassist';
 
@@ -6,11 +5,11 @@ import { find, addAttrs, addClass } from 'domassist';
  * Adds an anchor within HTML elements
  *
  * @param {string|Element|NodeList} selector Selector from which extract headings
- * @param {*} [anchorContent=null] Content to be inserted within the anchor
+ * @param {string|Element|NodeList} [anchorContent=null] Content to be inserted within the anchor
  *
  * @returns
  */
-function tocAnchor(selector, anchorContent = null) {
+function TocAnchor(selector, anchorContent = null) {
   const headings = find(selector);
 
   headings.forEach((heading) => {
@@ -34,4 +33,4 @@ function tocAnchor(selector, anchorContent = null) {
   return headings;
 }
 
-export default tocAnchor;
+export default TocAnchor;
