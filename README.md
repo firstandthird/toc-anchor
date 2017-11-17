@@ -6,6 +6,9 @@ In your project import the library:
 ```js
 import TocAnchor from ‘toc-anchor’;
 ```
+
+Import [default styles](styles.css).
+
 ### TocAnchor(selector, [anchorContent])
 
 Initializes anchor library. Both the first and second argument can either be a selector, DOM node, or a collection of DOM Nodes.
