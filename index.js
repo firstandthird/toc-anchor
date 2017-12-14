@@ -1,4 +1,3 @@
-
 import { find, addAttrs, addClass } from 'domassist';
 
 /**
@@ -14,10 +13,21 @@ function TocAnchor(selector, anchorContent = null) {
 
   headings.forEach((heading) => {
     const link = document.createElement('a');
-    const anchor = heading.getAttribute('data-anchor-id') || heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+    let anchorId = heading.getAttribute('data-anchor-id') || heading.id || heading.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+
+    /**
+     * Avoid Id name clashing
+     */
+    find(`#${anchorId}`).forEach((repeatedId, index) => {
+      if (repeatedId !== heading) {
+        anchorId += `-${index + 1}`;
+      }
+    });
+
+    heading.id = anchorId;
 
     addAttrs(link, {
-      href: `#${anchor}`,
+      href: `#${anchorId}`,
       title: heading.textContent,
       innerHTML: anchorContent
     });
@@ -29,6 +39,15 @@ function TocAnchor(selector, anchorContent = null) {
 
     heading.insertBefore(link, heading.firstChild);
   });
+
+  /**
+   * Scrolls to anchor on page reload
+   */
+  setTimeout(() => {
+    if (window.location.hash) {
+      window.location = window.location.hash;
+    }
+  }, 0);
 
   return headings;
 }
