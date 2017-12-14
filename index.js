@@ -27,7 +27,7 @@ function TocAnchor(selector, anchorContent = null) {
     addClass(heading, 'toc-anchor-heading');
     addClass(link, 'toc-anchor-link');
 
-    heading.appendChild(link);
+    heading.insertBefore(link);
   });
 
   return headings;
