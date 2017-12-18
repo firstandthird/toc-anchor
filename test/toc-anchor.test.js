@@ -5,11 +5,12 @@ import domassist from 'domassist';
 import TocAnchor from '../index';
 import { teardown } from './setup';
 
-const setup = (total) => {
+const setup = (total, properties) => {
   const frag = document.createDocumentFragment();
-  for (let i = 0; i < total; i += 1) {
+  for (let i = 1; i <= total; i += 1) {
     const heading = document.createElement('h2');
-    heading.textContent = `Heading ${1}`;
+    heading.id = `header-${i}`;
+    heading.textContent = `Heading ${i}`;
     frag.appendChild(heading);
   }
   return frag;
@@ -57,3 +58,16 @@ test('tocAnchor - Generates anchors from Element', assert => {
   assert.end();
 });
 
+test('tocAnchor - Creates an anchor with the right hash', assert => {
+  const el = document.getElementById('toc-container').appendChild(setup(1));
+  const headings = domassist.findOne('#header-1');
+
+  TocAnchor(headings);
+
+  const anchorHash = (domassist.findOne('.toc-anchor-link').href).split('#')[1];
+
+  assert.equals(anchorHash, 'header-1', 'Anchor link matches element id');
+
+  teardown(el);
+  assert.end();
+});

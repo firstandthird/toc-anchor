@@ -1,5 +1,12 @@
 # TOC-Anchor
 Automatically adds anchors to elements.
+
+## Installation
+
+```sh
+npm install toc-anchor
+```
+
 ## Usage
 In your project import the library:
 
