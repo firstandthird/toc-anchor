@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/firstandthird/toc-anchor#readme",
   "devDependencies": {
-    "domassist": "^1.9.1",
     "eslint": "^4.13.1",
     "eslint-config-firstandthird": "4.2.1",
     "eslint-plugin-compat": "^2.1.0",
@@ -63,5 +62,7 @@
       "compat/compat": 2
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "domassist": "^1.10.0"
+  }
 }
