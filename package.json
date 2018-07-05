@@ -1,6 +1,6 @@
 {
   "name": "toc-anchor",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Automatically adds anchors to elements",
   "main": "dist/toc-anchor.js",
   "module": "index.js",
