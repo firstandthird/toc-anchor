@@ -1,67 +1,67 @@
 {
-    "name": "toc-anchor",
-    "version": "1.0.0",
-    "description": "Automatically adds anchors to elements",
-    "main": "dist/toc-anchor.js",
-    "module": "index.js",
+  "name": "toc-anchor",
+  "version": "1.0.0",
+  "description": "Automatically adds anchors to elements",
+  "main": "dist/toc-anchor.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "scriptkit",
+    "build": "scriptkit build",
+    "dev": "scriptkit dev",
+    "test": "cat test/toc-anchor.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
+    "prepublish": "scriptkit"
+  },
+  "keywords": [
+    "browser",
+    "toc",
+    "anchor"
+  ],
+  "author": "First+Third <code@firstandthird.com> (http://firstandthird.com/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/toc-anchor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/firstandthird/toc-anchor/issues"
+  },
+  "homepage": "https://github.com/firstandthird/toc-anchor#readme",
+  "devDependencies": {
+    "domassist": "^1.9.1",
+    "eslint": "^4.13.1",
+    "eslint-config-firstandthird": "4.2.1",
+    "eslint-plugin-compat": "^2.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "phantomjs-prebuilt": "2.1.16",
+    "scriptkit": "0.3.0",
+    "tap-spec": "4.1.1",
+    "tape-rollup": "4.6.4",
+    "tape-run": "3.0.1"
+  },
+  "scriptkit": {
+    "files": {
+      "dist/toc-anchor.js": "index.js",
+      "test/toc-anchor.test.dist.js": "test/toc-anchor.test.js"
+    },
     "scripts": {
-        "start": "scriptkit",
-        "build": "scriptkit build",
-        "dev": "scriptkit dev",
-        "test": "cat test/toc-anchor.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
-        "prepublish": "scriptkit"
+      "babel": {
+        "exclude": [
+          "node_modules/tape-rollup/*"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
     },
-    "keywords": [
-        "browser",
-        "toc",
-        "anchor"
+    "extends": "firstandthird",
+    "plugins": [
+      "compat"
     ],
-    "author": "First+Third <code@firstandthird.com> (http://firstandthird.com/)",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/firstandthird/toc-anchor.git"
-    },
-    "bugs": {
-        "url": "https://github.com/firstandthird/toc-anchor/issues"
-    },
-    "homepage": "https://github.com/firstandthird/toc-anchor#readme",
-    "devDependencies": {
-        "domassist": "^1.9.1",
-        "eslint": "^4.13.1",
-        "eslint-config-firstandthird": "4.2.1",
-        "eslint-plugin-compat": "^2.1.0",
-        "eslint-plugin-import": "^2.8.0",
-        "phantomjs-prebuilt": "2.1.16",
-        "scriptkit": "0.3.0",
-        "tap-spec": "4.1.1",
-        "tape-rollup": "4.6.4",
-        "tape-run": "3.0.1"
-    },
-    "scriptkit": {
-        "files": {
-            "dist/toc-anchor.js": "index.js",
-            "test/toc-anchor.test.dist.js": "test/toc-anchor.test.js"
-        },
-        "scripts": {
-            "babel": {
-                "exclude": [
-                    "node_modules/tape-rollup/*"
-                ]
-            }
-        }
-    },
-    "eslintConfig": {
-        "env": {
-            "browser": true
-        },
-        "extends": "firstandthird",
-        "plugins": [
-            "compat"
-        ],
-        "rules": {
-            "compat/compat": 2
-        }
-    },
-    "dependencies": {}
+    "rules": {
+      "compat/compat": 2
+    }
+  },
+  "dependencies": {}
 }
