@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Automatically adds anchors to elements",
   "main": "index.js",
-  "module": "dist/toc-anchor.esm.js",
+  "module": "dist/toc-anchor.js",
   "scripts": {
     "start": "scriptkit",
     "build": "scriptkit build",
