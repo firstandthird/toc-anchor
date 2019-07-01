@@ -1,4 +1,4 @@
-# TOC-Anchor ![npm](https://img.shields.io/npm/v/toc-anchor.svg) [![Build Status](https://travis-ci.org/firstandthird/svg-injector.svg?branch=master)](https://travis-ci.org/firstandthird/svg-injector)
+# TOC-Anchor ![npm](https://img.shields.io/npm/v/toc-anchor.svg) [![Build Status](https://travis-ci.org/firstandthird/svg-injector.svg?branch=master)](https://travis-ci.org/firstandthird/toc-anchor)
 
 Automatically adds anchors to elements.
 
